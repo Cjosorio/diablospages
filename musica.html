@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diablos Negros</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilos para los discos */
+        .album-container, .single-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .album-card, .single-card {
+            width: 250px;
+            background-color: #1a1a1a;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .album-card:hover, .single-card:hover {
+            transform: scale(1.1); /* Aumentar el tamaño de la card */
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .album-card img, .single-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease; /* Animación suave al expandir */
+        }
+
+        .album-card:hover img, .single-card:hover img {
+            transform: scale(1.15); /* Hacer que la imagen se expanda */
+        }
+
+        .album-card h3, .single-card h3 {
+            margin: 20px 0;
+            font-size: 24px;
+        }
+
+        .album-card ul, .single-card ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px;
+            opacity: 0; /* Inicialmente ocultamos la lista de canciones */
+            transition: opacity 0.3s ease; /* Animación suave para mostrar la lista */
+            max-height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .album-card:hover ul, .single-card:hover ul {
+            opacity: 1; /* Hacemos visible la lista de canciones cuando se pasa el puntero */
+            max-height: 500px; /* Hacemos que se vea toda la lista */
+        }
+
+        .album-card ul li, .single-card ul li {
+            margin: 8px 0;
+        }
+
+        .album-card .listen-button, .single-card .listen-button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .album-card .listen-button:hover, .single-card .listen-button:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #000;
+            color: white;
+        }
+
+        footer .footer-image-container img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<div class="social-icons" style="display: none;">
+    <a href="https://www.facebook.com/diablosnegroshn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/diablosnegroshn" target="_blank" title="Gorjeo" class="nav-link text-white text-accent-hover p-1 fas fa-times"></a>
+    <a href="https://www.instagram.com/diablosnegroshn" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@diablosnegrostv?si=oNcWLyUthcTKCA-M" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+
+<body>
+    <!-- Contenedor para el logo animado -->
+    <div id="logo-overlay">
+        <img id="logo" src="imagenes/logo2.png" alt="Logo de la banda">
+    </div>
+
+    <header style="display: none;">
+        <nav>
+            <ul class="menu">
+                <li><a href="banda.html">BANDA</a></li>
+                <li><a href="musica.html">MÚSICA</a></li>
+                <li class="logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="imagenes/logo1.png" alt="Logo de la banda">
+                    </a>
+                </li>
+                <li><a href="#media">MEDIA</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="discografia">
+            <h2 style="text-align: center; font-size: 36px; margin: 60px 0;">Discografía</h2>
+        
+            <div class="album-container">
+                <!-- Album 1 -->
+                <div class="album-card">
+                    <img src="imagenes/de mil maneras.jpg" alt="De Mil Maneras">
+                    <h3>De Mil Maneras</h3>
+                    <button class="listen-button" onclick="window.location.href='https://open.spotify.com/intl-es/album/6PbQ9qcbFerKH8dqspB21i?si=pcWqivTQQrOh6fprdNbZoA'">Escuchar</button>
+                </div>
+        
+                <!-- Album 2 -->
+                <div class="album-card">
+                    <img src="imagenes/tierra suelta.jpg" alt="Tierra Suelta">
+                    <h3>Tierra Suelta</h3>
+                    <button class="listen-button" onclick="window.location.href='https://open.spotify.com/intl-es/album/4X4sO0yBU1O5UEbOJf1Jxs?si=o-CV1TJgTcObjRuVNjnAcg'">Escuchar</button>
+                </div>
+        
+                <!-- Album 3 -->
+                <div class="album-card">
+                    <img src="imagenes/revolucion.jpg" alt="Revolución">
+                    <h3>Revolución</h3>
+                    <button class="listen-button" onclick="window.location.href='https://open.spotify.com/intl-es/album/30Onh4psu6Gyq9vG9XqBFB?si=v5FW_bj_SAeozoFQgTRgUg'">Escuchar</button>
+                </div>
+        
+                <!-- Album 4 -->
+                <div class="album-card">
+                    <img src="imagenes/por los viejos tiempos.jpg" alt="Por los Viejos Tiempos">
+                    <h3>Por los Viejos Tiempos</h3>
+                    <button class="listen-button" onclick="window.location.href='https://open.spotify.com/intl-es/album/606x8wXfeWOvoSFcRjq0ur?si=GBFGOdkuSqW0jKtvSzrYjA'">Escuchar</button>
+                </div>
+        
+                <!-- Album 5 -->
+                <div class="album-card">
+                    <img src="imagenes/unplugged.jpg" alt="Diablos Negros: Unplugged (En Vivo)">
+                    <h3>Diablos Negros Unplugged (En Vivo)</h3>
+                    <button class="listen-button" onclick="window.location.href='https://open.spotify.com/intl-es/album/3YEGQO8rfQmfbxmykhAo3a?si=Go_a35hkSvSmLn065C9N_g'">Escuchar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="sencillos">
+            <h2 style="text-align: center; font-size: 36px; margin: 60px 0;">Sencillos y EP</h2>
+            <div class="single-container">
+                <!-- Sencillo 1 -->
+                <div class="single-card">
+                    <img src="imagenes/padre nuestro.jpg" alt="Sencillo 1">
+                    <h3>Padre Nuestro</h3>
+                    <button class="listen-button" onclick="window.location.href='https://open.spotify.com/intl-es/album/7BakNV3b5Fw2TBQjSJcN5n?si=drcYL8EXQEO5wmnjeX1iyQ'">Escuchar</button>
+                </div>
+
+                <!-- Sencillo 2 -->
+                <div class="single-card">
+                    <img src="imagenes/se fue.png" alt="Sencillo 2">
+                    <h3>Se Fue</h3>
+                    <button class="listen-button" onclick="window.location.href='https://open.spotify.com/intl-es/album/4VsKokatzVn8sPtOXwdrDp?si=UizqiQSeT6K_qouYp-VhDg'">Escuchar</button>
+                </div>
+
+                <!-- Sencillo 3 -->
+                <div class="single-card">
+                    <img src="imagenes/junto a mi.png" alt="Sencillo 3">
+                    <h3>Junto a mi</h3>
+                    <button class="listen-button" onclick="window.location.href='https://open.spotify.com/intl-es/album/4BBSX1sGHsBJcx0Y6xLwc9?si=YfGiTtxQTRiM1nOQql9iew'">Escuchar</button>
+                </div>
+
+                <div class="single-card">
+                    <img src="imagenes/migrante.png" alt="Sencillo 4 ">
+                    <h3>El Migrante</h3>
+                    <button class="listen-button" onclick="window.location.href='https://open.spotify.com/intl-es/album/1caBD3VGqnleEK0Ga95atY?si=S_pZXEJXSpOWHELN0orVUA'">Escuchar</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="display: none; position: relative; text-align: center; padding: 40px 0;">
+        <!-- Imagen centrada al inicio -->
+        <div class="footer-image-container">
+            <img src="imagenes/logo3.jpg" alt="Logo Footer" class="footer-image">
+        </div>
+    
+        <!-- Contenido del footer -->
+        <p>&copy; 2025 Diablos Negros.</p>
+        <p>Contactanos: diablosnegrosrock@gmail.com</p>
+        <p>Diseño y gestión web por MEDIA FILMS ⚙︎ Vídeos y fotos por </p>
+        <a href="https://vanguardiaproducciones.hn/diablos_negros/?fbclid=IwY2xjawHk8TFleHRuA2FlbQIxMAABHRlTAdL--R2wsgKCAvsBT8thyeh3nls6rKghGIh4eWq-6cz7UhmfyDSDNQ_aem_wDSbTrU1weFrfn7dqM7BIA" target="_blank">
+            <button style="background-color: #ffffff; color: #000; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                Cotizar
+            </button>
+        </a>
+    </footer>
+
+    <script>
+        // Ocultar el logo después de la animación y mostrar el contenido principal
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('logo-overlay').style.display = 'none';
+                document.querySelectorAll('header, .social-icons, main, footer').forEach(el => {
+                    el.style.display = '';
+                });
+            }, 1000); // Duración de la animación (en ms)
+        });
+    </script>
+</body>
+</html>

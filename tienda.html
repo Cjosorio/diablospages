@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Diablos Negros</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilos para la animación del logo */
+        #logo-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #logo {
+            width: 800px;
+            animation: zoomInOut 2s infinite;
+        }
+
+        @keyframes zoomInOut {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Contenedor principal de la tienda */
+        .store-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .store-header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        .store-header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .store-header p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* Estilo de las tarjetas de producto */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-info p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #777;
+        }
+
+        .product-info .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e63946;
+            margin-bottom: 15px;
+        }
+
+        .product-info button {
+            padding: 10px 20px;
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-info button:hover {
+            background-color: #d62828;
+        }
+  
+    </style>
+</head>
+<div class="social-icons" style="display: none;">
+    <a href="https://www.facebook.com/diablosnegroshn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/diablosnegroshn" target="_blank" title="Gorjeo" class="nav-link text-white text-accent-hover p-1 fas fa-times"></a>
+    <a href="https://www.instagram.com/diablosnegroshn" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@diablosnegrostv?si=oNcWLyUthcTKCA-M" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+<body>
+    <!-- Contenedor para el logo animado -->
+    <div id="logo-overlay">
+        <img id="logo" src="imagenes/logo2.png" alt="Logo de la banda">
+    </div>
+
+    <header style="display: none;">
+        <nav>
+            <ul class="menu">
+                <li><a href="banda.html">BANDA</a></li>
+                <li><a href="musica.html">MÚSICA</a></li>
+                <li class="logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="imagenes/logo1.png" alt="Logo de la banda">
+                    </a>
+                </li>
+                <li><a href="#media">MEDIA</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="display: none;">
+        <div class="store-container">
+            <div class="store-header">
+                <h1>Tienda Oficial</h1>
+                <p>Explora nuestros productos exclusivos de Diablos Negros</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Ejemplo de tarjeta de producto -->
+                <div class="product-card">
+                    <img src="imagenes/camisa DN.jpeg" alt="Camiseta oficial">
+                    <div class="product-info">
+                        <h3>Camiseta Oficial</h3>
+                        <p>Edición limitada</p>
+                        <div class="price">L. 525.00</div>
+                        <button>Comprar ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="imagenes/gorra DN.jpeg" alt="Gorra oficial">
+                    <div class="product-info">
+                        <h3>Gorra Oficial</h3>
+                        <p>Estilo único</p>
+                        <div class="price">L. 415.00</div>
+                        <button>Comprar ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="imagenes/camisa2 DN.jpeg" alt="Camiseta Oficial">
+                    <div class="product-info">
+                        <h3>Camisa Alternativa</h3>
+                        <p>Colección especial</p>
+                        <div class="price">L.550.00</div>
+                        <button>Comprar ahora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="display: none; position: relative; text-align: center; padding: 40px 0;">
+        <!-- Imagen centrada al inicio -->
+        <div class="footer-image-container">
+            <img src="imagenes/logo3.jpg" alt="Logo Footer" class="footer-image">
+        </div>
+    
+        <!-- Contenido del footer -->
+        <p>&copy; 2025 Diablos Negros.</p>
+        <p>Contactanos: diablosnegrosrock@gmail.com</p>
+        <p>Diseño y gestión web por MEDIA FILMS ⚙︎ Vídeos y fotos por </p>
+        <a href="https://vanguardiaproducciones.hn/diablos_negros/?fbclid=IwY2xjawHk8TFleHRuA2FlbQIxMAABHRlTAdL--R2wsgKCAvsBT8thyeh3nls6rKghGIh4eWq-6cz7UhmfyDSDNQ_aem_wDSbTrU1weFrfn7dqM7BIA" target="_blank">
+            <button style="background-color: #ffffff; color: #000; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                Cotizar
+            </button>
+        </a>
+    </footer>
+
+    <script>
+        // Ocultar el logo después de la animación y mostrar el contenido principal
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('logo-overlay').style.display = 'none';
+                document.querySelectorAll('header, main, footer').forEach(el => {
+                    el.style.display = '';
+                });
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

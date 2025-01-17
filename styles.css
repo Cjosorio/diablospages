@@ -1,0 +1,128 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #000;
+    background-color: #fff;
+}
+
+/* Menú de navegación */
+header {
+    background-color: #000;
+    padding: 5px 0; /* Menú más angosto */
+}
+
+/* Menú de navegación */
+.menu {
+    display: flex;
+    justify-content: center; /* Centra las pestañas */
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 80px; /* Ajusta el espacio entre las pestañas (más pequeño que antes) */
+}
+
+/* Para quitar el margen del último elemento */
+.menu li:last-child {
+    margin-right: 0;
+}
+
+/* Cambiar el color de los enlaces del menú a blanco */
+.menu li a {
+    color: #fff; /* Letras en blanco */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 8px; /* Menor padding para reducir el espacio */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cambiar el color del texto a blanco al pasar el mouse */
+.menu li a:hover {
+    background-color: #000000;
+    color: #ffffff; /* Mantiene las letras blancas al hacer hover */
+}
+
+/* Logo en el menú */
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+/* Portada */
+.portada img {
+    width: 100%;
+    height: auto;
+}
+
+/* Redes sociales */
+.social-icons {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Footer */
+footer {
+    position: relative;
+    text-align: center;
+    padding: 40px 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.footer-image-container {
+    margin-bottom: 20px; /* Espacio entre la imagen y el contenido del footer */
+}
+
+.footer-image {
+    width: 150px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: auto;
+}
+
+/* Animación para las redes sociales */
+@media (max-height: 700px) {
+    .social-icons {
+        position: absolute;
+        bottom: 20px;
+    }
+}
+
+.logo-link {
+    display: inline-block; /* Hace que el enlace solo ocupe el tamaño de la imagen */
+    text-decoration: none; /* Elimina cualquier subrayado del enlace */
+    outline: none; /* Evita el resaltado blanco en navegadores como Firefox o Chrome */
+}
+
+.logo-link img {
+    transition: transform 0.3s ease; /* Agrega animación suave */
+}
+
+.logo-link:hover img {
+    transform: scale(1.1); /* Aumenta el tamaño ligeramente al pasar el mouse */
+}

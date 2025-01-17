@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diablos Negros</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilos para la animación del logo */
+        #logo-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #logo {
+            width: 800px; /* Tamaño del logo */
+            animation: zoomInOut 2s infinite;
+        }
+
+        @keyframes zoomInOut {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Estilos para la imagen */
+        .image-container {
+            width: 100%; /* Ancho completo */
+            height: 640px; /* Altura ajustada del contenedor */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+
+        .image-container img {
+            width: 100%;  /* La imagen ocupa el 100% de la anchura del contenedor */
+            height: 100%; /* La imagen ocupa el 100% de la altura del contenedor */
+            object-fit: fill; /* Esto asegura que la imagen ocupe el espacio sin mantener la proporción */
+        }
+
+        .band-history {
+            text-align: center;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            font-family: Arial, sans-serif;
+        }
+
+        .band-history h2 {
+            font-size: 32px; /* Título más grande */
+            margin-bottom: 20px;
+        }
+
+        .band-history p {
+            line-height: 1.8; /* Espaciado entre líneas */
+            font-size: 20px; /* Tamaño del texto aumentado */
+            text-align: justify; /* Justificación del texto */
+        }
+
+        .band-history ul {
+            font-size: 20px; /* Aumenta el tamaño del texto de la lista */
+            text-align: left; /* Alinea a la izquierda los elementos de la lista */
+            margin-top: 20px;
+        }
+
+ /* Estilos para las cards de los miembros */
+.band-members-cards {
+    display: flex;
+    justify-content: center; /* Centra las cartas */
+    margin-top: 40px;
+    gap: 5px; /* Espacio entre las cartas */
+    margin-bottom: 40px; /* Añade espacio debajo de las cartas */
+    max-width: 800px; /* Igual al max-width del texto */
+    margin-left: auto; /* Centra el contenedor */
+    margin-right: auto; /* Centra el contenedor */
+}
+
+.card {
+    position: relative;
+    width: 230px; /* Establece el mismo ancho para todas las cartas */
+    height: 300px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para la sombra y el tamaño */
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Eleva la carta hacia arriba */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); /* Aumenta la sombra en hover */
+}
+
+.card-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.card:hover .card-info {
+    opacity: 1;
+}
+
+.card-info h3 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.card-info p {
+    font-size: 18px;
+}
+
+
+
+    </style>
+</head>
+<div class="social-icons" style="display: none;">
+    <a href="https://www.facebook.com/diablosnegroshn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/diablosnegroshn" target="_blank" title="Gorjeo" class="nav-link text-white text-accent-hover p-1 fas fa-times"></a>
+    <a href="https://www.instagram.com/diablosnegroshn" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@diablosnegrostv?si=oNcWLyUthcTKCA-M" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+<body>
+    <!-- Contenedor para el logo animado -->
+    <div id="logo-overlay">
+        <img id="logo" src="imagenes/logo2.png" alt="Logo de la banda">
+    </div>
+    <header style="display: none;">
+        <nav>
+            <ul class="menu">
+
+                <li><a href="banda.html">BANDA</a></li>
+                <li><a href="musica.html">MÚSICA</a></li>
+                <li class="logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="imagenes/logo1.png" alt="Logo de la banda">
+                    </a>
+                </li>
+                <li><a href="#media">MEDIA</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="display: none;">
+        <section id="banda" class="banda">
+            <!-- Imagen única que ocupa todo el contenedor -->
+            <div class="image-container">
+                <img src="imagenes/Emilio.jpg" alt="Imagen de la banda">
+            </div>
+
+            <!-- Historia de la banda -->
+            <div class="band-history">
+                <h2>Historia de la Banda</h2>
+                <p>Diablos Negros Honduras – Rock – Latino<br>
+                Grandeza es la mejor palabra para describir a los Diablos Negros y su impacto en el rock y cultura popular de la región centroamericana. Más de 40 años de carrera respaldan el legado que han construido como una de las primeras y mejores bandas de hard rock de Honduras y Centroamérica. Pueden ser tan románticos o pesados como se les dé la gana.</p>
+                <p>Desde hace más de tres décadas, las líricas y la música de Diablos Negros incluyen temas de diversa índole: una visión propia sobre la migración, las desigualdades sociales, la carencia de identidad local, la colonización de nuestros pueblos, la esperanza, el amor y otros temas que definen nuestra visión del mundo.</p>
+                <p>Diablos Negros es considerado en la región centroamericana como una de las bandas más sólidas y de culto, con apariciones en diversos espectáculos y festivales masivos. Integrada por:</p>
+               
+            </div>
+
+            <!-- Cards de los miembros -->
+            <div class="band-members-cards">
+                <div class="card">
+                    <img src="imagenes/Nilo Espinal.jpg" alt="Nilo Espinal">
+                    <div class="card-info">
+                        <div>
+                            <h3>Nilo Espinal</h3>
+                            <p>Vocalista</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="imagenes/Dago Lozano.jpg" alt="Dago Lozano">
+                    <div class="card-info">
+                        <div>
+                            <h3>Dago Lozano</h3>
+                            <p>Guitarrista</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="imagenes/Carlos Cedeño.jpg" alt="Carlos Cedeño">
+                    <div class="card-info">
+                        <div>
+                            <h3>Carlos Cedeño</h3>
+                            <p>Baterista</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="imagenes/Emilio Alvarez.jpg" alt="Emilio Álvarez">
+                    <div class="card-info">
+                        <div>
+                            <h3>Emilio Álvarez</h3>
+                            <p>Bajo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="display: none; position: relative; text-align: center; padding: 40px 0;">
+        <!-- Imagen centrada al inicio -->
+        <div class="footer-image-container">
+            <img src="imagenes/logo3.jpg" alt="Logo Footer" class="footer-image">
+        </div>
+    
+        <!-- Contenido del footer -->
+        <p>&copy; 2025 Diablos Negros.</p>
+        <p>Contactanos: diablosnegrosrock@gmail.com</p>
+        <p>Diseño y gestión web por MEDIA FILMS ⚙︎ Vídeos y fotos por </p>
+        <a href="https://vanguardiaproducciones.hn/diablos_negros/?fbclid=IwY2xjawHk8TFleHRuA2FlbQIxMAABHRlTAdL--R2wsgKCAvsBT8thyeh3nls6rKghGIh4eWq-6cz7UhmfyDSDNQ_aem_wDSbTrU1weFrfn7dqM7BIA" target="_blank">
+            <button style="background-color: #ffffff; color: #000; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                Cotizar
+            </button>
+        </a>
+    </footer>
+
+    <script>
+        // Ocultar el logo después de la animación y mostrar el contenido principal
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('logo-overlay').style.display = 'none';
+                document.querySelectorAll('header, .social-icons, main, footer').forEach(el => {
+                    el.style.display = '';
+                });
+            }, 1000); // Duración de la animación (en ms)
+        });
+    </script>
+</body>
+</html>
